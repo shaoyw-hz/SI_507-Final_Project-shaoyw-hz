@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <style>
+      th {text-transform: capitalize;}
+  </style>
+</head>
+<body>
+    <h1>Welcome to the world population browser!</h1>
+    
+    <form method="POST" action="/chosen">
+        <p>
+            Please choose country from table below for more information:<br/>
+            <input name="name" type="text"/>
+        </p>
+        <p>
+            <input type="radio" name="option" value="general">General Information<br/>
+            <input type="radio" name="option" value="cities">Large Cities<br/>
+            <input type="radio" name="option" value="history">Population history<br/>
+        </p>
+
+        <input type="submit" value="SEARCH"/><br/>
+
+        
+    </form>
+    <br/>    
+    <button type="button" 
+        onclick="window.open('', '_self', ''); window.close();">CLOSE THE PAGE</button>
+
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Rank</th>
+            <th>Population 2019</th>
+            <th>Area</th>
+            <th>Density 2019</th>
+            <th>Growth Rate</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <th>{{row[0]}}</th>
+            <th>{{row[1]}}</th>
+            <th>{{row[2]}}</th>
+            <th>{{row[3]}}</th>
+            <th>{{row[4]}}</th>
+            <th>{{row[5]}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Country Page</title>
+</head>
+<body>
+  {% if result | length == 0 %}
+    <h1> PLEASE ENTER A CORRECT COUNTRY NAME!</h1>
+  {% else %}
+    <h1>Here is information about: {{chosen}}</h1>
+    <h2>{{chosen}} is in the region of {{result[4]}}, and the captial city is {{result[3]}}. </h2>
+    <h2>The city with highest population in {{chosen}} is {{result[1]}}. </h2>
+    <h2>{{result[1]}} has a population of {{result[2]}}.</h2>
+  {% endif %}
+    <p><a href="/"> Homepage </a> </p>
+</body>
+</html>
